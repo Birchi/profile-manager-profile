@@ -10,15 +10,12 @@
 ##
 # Main
 ##
-function example-command () {
-    if [ $# -eq 0 ] ; then
-        ./help.sh
-    fi
+cat << EOF
+Usage: example-command COMMAND
 
-    if [[ "${@[1]}" == "version" ]] ; then
-        cat ./VERSION
-    else
-        ./help.sh
-    fi
+Commands:
+  version             Shows version.
+  help                Shows this help message.
 
-}
+Run 'example-command COMMAND --help' for more information on a profile.
+EOF
