@@ -10,15 +10,18 @@
 ##
 # Main
 ##
+command_directory=$(dirname $0)/command
+
 function example-command () {
     if [ $# -eq 0 ] ; then
-        ./help.sh
+        ${command_directory}/help.sh
+        exit 0
     fi
 
     if [[ "${@[1]}" == "version" ]] ; then
-        cat ./VERSION
+        cat ${command_directory}/VERSION
     else
-        ./help.sh
+        ${command_directory}/help.sh
     fi
 
 }
